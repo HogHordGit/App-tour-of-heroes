@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { HEROES } from '../shared/data/mock-data';
 import { HeroInterface } from '../shared/types/hero.interface';
 
 @Component({
@@ -8,9 +9,11 @@ import { HeroInterface } from '../shared/types/hero.interface';
 })
 export class HeroesComponent {
 
-  hero: HeroInterface = {
-    id: 1,
-    name: "Windstorm"
-  };
+  heroes = HEROES;
+  selectedHero?: HeroInterface;
+
+  onSelect(hero: HeroInterface): void {
+    this.selectedHero = hero;
+  }
 
 }
