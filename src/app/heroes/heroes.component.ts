@@ -12,16 +12,11 @@ export class HeroesComponent implements OnInit {
 
   constructor(private heroService: HeroService, private messageService: MessageService) {}
 
-  ngOnInit(): void {
-    this.getHeroes();
-  }
-
   heroes: HeroInterface[] = [];
   selectedHero?: HeroInterface;
 
-  onSelect(hero: HeroInterface): void {
-    this.selectedHero = hero;
-    this.messageService.add(`HeroesComponent: Selected hero id=${hero.id}`);
+  ngOnInit(): void {
+    this.getHeroes();
   }
 
   getHeroes(): void {
